@@ -14,7 +14,7 @@ angular.module('myApp', ['ngSwipeItem']);
 ```
 How To Use It
 =============
-```
+```html
 <!-- leftFunction.html -->
 <script type="text/ng-template" id="leftFunction.html">
     <p>Delete</p>
