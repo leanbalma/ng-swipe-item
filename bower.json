@@ -1,0 +1,25 @@
+{
+  "name": "ng-swipe-item",
+  "version": "0.1.0",
+  "authors": [
+    "Leandro Balmaceda <balmacedalm@gmail.com>"
+  ],
+  "description": "A swipeable item that could be fully customizable. User can define action for both swipe-left and swipe-right.",
+  "main": "dist/ngswipeitem.js",
+  "moduleType": [],
+  "keywords": [
+    "angularjs",
+    "swipe",
+    "ngrepeat",
+    "remove"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/leanbalma/ng-swipe-item/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
