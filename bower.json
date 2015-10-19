@@ -13,6 +13,9 @@
     "ngrepeat",
     "remove"
   ],
+  "dependencies": {
+    "angular": "~1.2",
+  },
   "license": "MIT",
   "homepage": "https://github.com/leanbalma/ng-swipe-item/",
   "ignore": [
