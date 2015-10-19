@@ -1,6 +1,10 @@
 AngularJS ngSwipeItem directive
-========================
+=============
 An AngularJS directive that creates swipeable list items based on the AngularJS's *$swipe* service. Actions for both *swipe-right* and *swipe-left* can be defined.
+
+Demo
+=============
+Check out [this](http://leanbalma.github.io/ng-swipe-item/demo/index.html) example!
 
 How To Install It
 =============
@@ -26,7 +30,7 @@ How To Use It
 </script>
 
 <div ng-repeat="thing in awesomeThings">
-  <div ng-swipe-item 
+  <div ng-swipe-item
     on-left="callLeftFunction($index)"
     on-right="callRightFunction($index)"
     left-template="leftFunction.html"
