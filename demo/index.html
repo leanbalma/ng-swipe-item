@@ -1,0 +1,77 @@
+<!doctype html>
+<html ng-app="demoApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+
+    <script src="../dist/ngswipeitem.js"></script>
+
+    <script>
+
+        var app = angular.module("demoApp", ['ngSwipeItem']);
+        app.controller("MainCtrl", [ "$scope", function($scope) {
+
+            $scope.callLeftFunction = function(index) {
+              $scope.toDoList.splice(index,1);
+              alert('Swipe-Left Function Called!');
+            };
+
+            $scope.callRightFunction = function(index) {
+              $scope.toDoList.splice(index,1);
+              alert('Swipe-Right Function Called!');
+            };
+
+            $scope.restoreList = function() {
+              var list = [
+                'Answer John\'s email',
+                'Learn AngularJS',
+                'Buy food',
+                'Call Steve'
+              ];
+
+              $scope.toDoList = list;
+            };
+
+            $scope.restoreList();
+
+            } ]);
+
+    </script>
+  </head>
+  <body ng-controller="MainCtrl">
+
+  <div class="container">
+    <h1>To Do List <small>ngSwipeItem directive example</small></h1>
+
+    <hr>
+    <!-- leftFunction.html -->
+    <script type="text/ng-template" id="leftFunction.html">
+      <p class="text-danger" style="line-height: 50px; font-size: 20px;"><strong>Delete item</strong></p>
+    </script>
+
+    <!-- rightFunction.html -->
+    <script type="text/ng-template" id="rightFunction.html">
+      <p class="text-success" style="line-height: 50px; font-size: 20px;"><strong>Store item</strong></p>
+    </script>
+
+    <div ng-repeat="task in toDoList">
+      <div ng-swipe-item on-left="callLeftFunction($index)" on-right="callRightFunction($index)" threshold="0.3" left-template="leftFunction.html" right-template="rightFunction.html">
+        <p style="line-height: 50px; text-align: center; background: skyBlue; margin-bottom:10px; font-size: 16px"><strong>{{task}}</strong></p>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <button class="btn btn-primary" ng-click="restoreList()">Restore List</button>
+
+  </div>
+</body>
+</html>
